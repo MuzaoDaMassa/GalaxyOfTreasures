@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+#if ENABLE_CLOUD_SERVICES_ANALYTICS
+using UnityEngine.Analytics;
+#endif
 
 public class StoreButtons : MonoBehaviour
 {
@@ -14,6 +17,7 @@ public class StoreButtons : MonoBehaviour
     public UIManager_Store _uiManager;
 
     public int _counterOffer, _finalPrice;
+    public static int _profit;
 
     public void SellButton()
     {
@@ -71,16 +75,30 @@ public class StoreButtons : MonoBehaviour
         _counterOfferInputField.SetActive(true);
         _sendCounterOfferButton.SetActive(true);
         _greenBart._negotiationActive = true;
+
+
     }
 
     public void SendCounterOffer()
     {
         var _tempCounterOffer = _counterOfferInputField.GetComponentInChildren<GetCounterOfferScript>()._counterOffer;
         _greenBart._counterOfferValue = _tempCounterOffer;
-        //_greenBart._playerOffer = true;
-        //_greenBart._negotiationRound++;
         _greenBart._waitingForPlayer = false;
+
         Debug.Log(_greenBart._counterOfferValue);
+
+        // Create dictionary to store you event data
+        Dictionary<string, object> data = new Dictionary<string, object>();
+
+        //Add the counter offer to your event data
+        data.Add("Counter Offer", _tempCounterOffer);
+
+        // The name of the event that you will send
+        string counterOffers = "" + _tempCounterOffer;
+
+        //Send the event. Also get the result, so we can make sure it sent correctly
+        AnalyticsResult result = Analytics.CustomEvent(counterOffers, data);
+        Debug.Log(result);
     }
 
     public void AcceptOffer()
@@ -88,10 +106,26 @@ public class StoreButtons : MonoBehaviour
         _greenBart._negotiationActive = false;
         _greenBart._negotiationSuccess = true;
         _greenBart._waitingForPlayer = true;
+        _greenBart._greenBartImage.sprite = _greenBart._greenBartHappy;
         _uiManager.AddCoins(_greenBart._finalPrice);
         _optionButtons.SetActive(true);
         _negotiationArea.SetActive(false);
         _counterOfferInputField.SetActive(false);
         _sendCounterOfferButton.SetActive(false);
+        _profit = _greenBart._finalPrice - _greenBart._originalPrice;
+
+        // Create dictionary to store you event data
+        Dictionary<string, object> data = new Dictionary<string, object>();
+
+        //Add the counter offer to your event data
+        data.Add("Counter Offer", _profit);
+
+        // The name of the event that you will send
+        string profit = "" + _profit;
+
+        //Send the event. Also get the result, so we can make sure it sent correctly
+        AnalyticsResult result = Analytics.CustomEvent(profit, data);
+        Debug.Log(result);
+
     }
 }

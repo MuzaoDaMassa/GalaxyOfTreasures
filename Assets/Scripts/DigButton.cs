@@ -23,55 +23,56 @@ public class DigButton : MonoBehaviour
 
     public void DigButtonPressed()
     {
-        int _treasureChance = Random.Range(1, 11);
+        int _treasureChance = Random.Range(1, 10);
         _digsCounter++;
 
-        if (_digsCounter == 1)
+        switch (_digsCounter)
         {
-            if (_treasureChance > 8)
-            {
-                TreasureFound();
-            }
-            else
-            {
-                StartCoroutine(TryAgainTextRoutine());
-            }
-        }
+            case 1:
+                if (_treasureChance > 8)
+                {
+                    TreasureFound();
+                }
+                else
+                {
+                    StartCoroutine(TryAgainTextRoutine());
+                }
+                break;
 
-        if (_digsCounter == 2)
-        {
-            if (_treasureChance > 6)
-            {
-                TreasureFound();
-            }
-            else
-            {
-                StartCoroutine(TryAgainTextRoutine());
-            }
-        }
+            case 2:
+                if (_treasureChance > 6)
+                {
+                    TreasureFound();
+                }
+                else
+                {
+                    StartCoroutine(TryAgainTextRoutine());
+                }
+                break;
 
-        if (_digsCounter == 3)
-        {
-            if (_treasureChance > 4)
-            {
-                TreasureFound();
-            }
-            else
-            {
-                StartCoroutine(TryAgainTextRoutine());
-            }
-        }
+            case 3:
+                if (_treasureChance > 4)
+                {
+                    TreasureFound();
+                }
+                else
+                {
+                    StartCoroutine(TryAgainTextRoutine());
+                }
+                break;
 
-        if (_digsCounter == 4)
-        {
-            if (_treasureChance > 1)
-            {
-                TreasureFound();
-            }
-            else
-            {
-                StartCoroutine(TryAgainTextRoutine());
-            }
+            case 4:
+                if (_treasureChance > 2)
+                {
+                    TreasureFound();
+                }
+                else
+                {
+                    StartCoroutine(TryAgainTextRoutine());
+                }
+                break;
+            default:
+                break;
         }
     }
 

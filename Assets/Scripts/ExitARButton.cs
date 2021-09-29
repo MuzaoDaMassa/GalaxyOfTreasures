@@ -7,6 +7,6 @@ public class ExitARButton : MonoBehaviour
 {
     public void LeavePlanet()
     {
-        SceneManager.LoadScene("Galaxy1");
+        SceneManager.LoadScene("Galaxy1_Scene");
     }
 }
