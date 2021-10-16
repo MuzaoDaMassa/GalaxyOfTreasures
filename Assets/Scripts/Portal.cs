@@ -17,7 +17,7 @@ public class Portal : MonoBehaviour
     {
         Vector3 playerPos = player.GetComponent<Transform>().position;
         objPlaceHolder = Instantiate(portalPrefab);
-        portalPrefab.GetComponent<Transform>().position = new Vector3(playerPos.x + 0.107f, playerPos.y, playerPos.z + 1f);
+        objPlaceHolder.GetComponent<Transform>().position = new Vector3(playerPos.x + 0.107f, playerPos.y, playerPos.z + 1f);
         StartCoroutine(WaitToStartAnim());
     }
 
@@ -37,9 +37,7 @@ public class Portal : MonoBehaviour
     }
     private void PlayerAnimation()
     {
-        Transform playerPos = player.gameObject.GetComponent<Transform>();
-
-        playerPos.position = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z + 1f);
+        
 
         StartCoroutine(LoadStoreScene());
     }
@@ -59,7 +57,10 @@ public class Portal : MonoBehaviour
         SceneManager.LoadScene("Store_Scene");
     }
 
-    
+    public void SkipAnimation()
+    {
+
+    }
 
     
     
