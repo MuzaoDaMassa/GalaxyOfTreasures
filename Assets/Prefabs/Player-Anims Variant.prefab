@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!95 &609128828
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104596532137536944}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd45e432ae02d9941aabea3879121c5f, type: 2}
+  m_CullingMode: 2
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &583496462690067006
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8674409434098503564, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503564, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: _speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503564, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503564, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: touchField
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503565, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674409434098503566, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+      propertyPath: m_Name
+      value: Player-Anims
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+--- !u!1 &8104596532137536944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8674409434098503566, guid: 0b10592860f3c4c228d424ea4b7189db, type: 3}
+  m_PrefabInstance: {fileID: 583496462690067006}
+  m_PrefabAsset: {fileID: 0}
