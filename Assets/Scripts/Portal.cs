@@ -44,7 +44,7 @@ public class Portal : MonoBehaviour
     }
     IEnumerator StartAnimation()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         Vector3 playerPos = player.GetComponent<Transform>().position;
         transitionObjPlaceHolder = Instantiate(transitionFXPrefab);
         transitionObjPlaceHolder.GetComponent<Transform>().position = new Vector3(playerPos.x + 0.107f, playerPos.y, playerPos.z + 1f);
