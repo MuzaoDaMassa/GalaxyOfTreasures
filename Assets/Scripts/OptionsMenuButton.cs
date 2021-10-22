@@ -5,7 +5,9 @@ using UnityEngine;
 public class OptionsMenuButton : MonoBehaviour
 {
     [SerializeField] GameObject menuButton;
+    [SerializeField] GameObject inventoryObject;
     private bool menuIsActive = false;
+    private bool inventoryIsActive = false;
     public void MenuButton()
     {
 
@@ -14,7 +16,7 @@ public class OptionsMenuButton : MonoBehaviour
             CloseMenu();
         }
         
-        else if(!menuIsActive)
+        else if(!menuIsActive && !inventoryIsActive)
         {
             OpenMenu();
         } 
@@ -29,5 +31,19 @@ public class OptionsMenuButton : MonoBehaviour
     {
         menuButton.SetActive(false);
         menuIsActive = false;
+    }
+
+    public void OpenInventory()
+    {
+        menuButton.SetActive(false);
+        menuIsActive = false;
+        inventoryIsActive = true;
+        inventoryObject.SetActive(true);
+    }
+
+    public void CloseInventory()
+    {
+        inventoryIsActive = false;
+        inventoryObject.SetActive(false);
     }
 }
