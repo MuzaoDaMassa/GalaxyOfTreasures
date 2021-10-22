@@ -25,5 +25,10 @@ public class InterfaceButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Galaxy1_Scene");
     }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
 
