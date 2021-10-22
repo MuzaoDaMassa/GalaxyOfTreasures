@@ -115,6 +115,7 @@ public class StoreButtons : MonoBehaviour
         _greenBart._greenBartImage.sprite = _greenBart._greenBartHappy;
         _uiManager.AddCoins(_greenBart._finalPrice);
         _optionButtons.SetActive(true);
+        _returnToShipObj.SetActive(true);
         _negotiationArea.SetActive(false);
         _counterOfferInputField.SetActive(false);
         _sendCounterOfferButton.SetActive(false);
