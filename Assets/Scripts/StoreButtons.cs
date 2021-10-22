@@ -13,6 +13,8 @@ public class StoreButtons : MonoBehaviour
     public GameObject _sendCounterOfferButton;
     public GameObject _counterOfferInputField;
     public GameObject _treasure;
+    public GameObject _returnToShipObj;
+    public GameObject _cancelPreTrade;
     public GreenBartScript _greenBart;
     public UIManager_Store _uiManager;
 
@@ -26,6 +28,8 @@ public class StoreButtons : MonoBehaviour
         _commonButtons.SetActive(true);
         _rareButtons.SetActive(false);
         _epicButtons.SetActive(false);
+        _returnToShipObj.SetActive(false);
+        _cancelPreTrade.SetActive(true);
     }
 
     public void CommonTabButton()
@@ -33,6 +37,7 @@ public class StoreButtons : MonoBehaviour
         _commonButtons.SetActive(true);
         _rareButtons.SetActive(false);
         _epicButtons.SetActive(false);
+        
     }
 
     public void RareTabButton()
@@ -68,6 +73,7 @@ public class StoreButtons : MonoBehaviour
         _greenBart._negotiationActive = false;
         _greenBart._negotiationSuccess = false;
         _greenBart._waitingForPlayer = false;
+        _returnToShipObj.SetActive(true);
     }
 
     public void CounterOfferButton()
@@ -127,5 +133,16 @@ public class StoreButtons : MonoBehaviour
         AnalyticsResult result = Analytics.CustomEvent(profit, data);
         Debug.Log(result);
 
+    }
+
+    public void CancelPreTrade()
+    {
+        _optionButtons.SetActive(true);
+        _inventoryTabs.SetActive(false);
+        _commonButtons.SetActive(false);
+        _rareButtons.SetActive(false);
+        _epicButtons.SetActive(false);
+        _returnToShipObj.SetActive(true);
+        _cancelPreTrade.SetActive(false);
     }
 }
