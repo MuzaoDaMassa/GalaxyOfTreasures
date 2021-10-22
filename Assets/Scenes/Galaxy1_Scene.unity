@@ -1323,7 +1323,11 @@ MonoBehaviour:
   _coins: 0
   _treasures: []
   _playerObj: {fileID: 1885139852}
+  _standardMaterial: {fileID: 2100000, guid: 19db6d8c80ec14c7eaf8cba772f0e38a, type: 2}
   _toyShipMaterial: {fileID: 2100000, guid: 768fc6e596d4c9e46ba3699d6d72902a, type: 2}
+  _buttonImage: {fileID: 884880074}
+  _standardSkinSprite: {fileID: 21300000, guid: d9ed54704ad978446a4fc4a11d5014e8, type: 3}
+  _toyShipSkinSprite: {fileID: 21300000, guid: ad96e55091e694d4bb0c09c6aab65e8d, type: 3}
 --- !u!1 &851830516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,7 +2875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151891868830963036, guid: 6008978be32e0f94a9ccd05387634183, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7151891868830963037, guid: 6008978be32e0f94a9ccd05387634183, type: 3}
       propertyPath: m_Pivot.x
