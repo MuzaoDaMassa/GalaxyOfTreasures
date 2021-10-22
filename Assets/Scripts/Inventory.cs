@@ -42,8 +42,6 @@ public class Inventory : MonoBehaviour
         {
             _playerObj.GetComponent<MeshRenderer>().material = _standardMaterial;
             _buttonImage.GetComponent<Image>().sprite = _toyShipSkinSprite;
-            _buttonImage.GetComponent<Transform>().position = new Vector3(this.transform.position.x, 17.07f, this.transform.position.z);
-            _buttonImage.GetComponent<Transform>().localScale = new Vector3(this.transform.localScale.x, 3.41f, this.transform.localScale.z);
             _standardPlayerSkinIsActive = true;
         }
 
