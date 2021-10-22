@@ -47,5 +47,6 @@ public class UIManager_Store : MonoBehaviour
     public void AddCoins(int finalPrice)
     {
         _inventory._coins += finalPrice;
+        PlayerPrefs.SetInt("CoinAmount", _inventory._coins);
     }
 }

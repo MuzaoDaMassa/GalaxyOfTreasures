@@ -8,7 +8,7 @@ public class DigButton : MonoBehaviour
     public bool _isTreasurefound = false;
 
     public GameObject tryAgainText, chestFoundText;
-    public GameObject chestPrefab;
+    public GameObject[] chestPrefab;
     public GameObject treasurePrefab;
     [HideInInspector]
     public Transform chestPosition;
@@ -87,8 +87,11 @@ public class DigButton : MonoBehaviour
 
     private void TreasureFound()
     {
-        Instantiate(chestPrefab, chestPosition.position, Quaternion.identity);
+        int chestSelector = Random.Range(0, 2);
+        GameObject chest = Instantiate(chestPrefab[chestSelector], chestPosition.position, Quaternion.identity);
         chestFoundText.SetActive(true);
         _isTreasurefound = true;
+        Destroy(chest);
+        Instantiate(treasurePrefab, chestPosition.position, Quaternion.identity);
     }
 }

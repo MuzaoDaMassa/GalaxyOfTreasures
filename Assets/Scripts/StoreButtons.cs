@@ -120,7 +120,7 @@ public class StoreButtons : MonoBehaviour
         _counterOfferInputField.SetActive(false);
         _sendCounterOfferButton.SetActive(false);
         _profit = _greenBart._finalPrice - _greenBart._originalPrice;
-
+        
         // Create dictionary to store you event data
         Dictionary<string, object> data = new Dictionary<string, object>();
 

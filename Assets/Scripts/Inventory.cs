@@ -21,7 +21,10 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-
+       if (PlayerPrefs.HasKey("CoinAmount"))
+        {
+            _coins = PlayerPrefs.GetInt("CoinAmount");
+        } 
     }
 
     // Update is called once per frame
