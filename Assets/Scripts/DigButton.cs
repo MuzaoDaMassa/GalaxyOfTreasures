@@ -31,7 +31,7 @@ public class DigButton : MonoBehaviour
             case 1:
                 if (_treasureChance > 8)
                 {
-                    TreasureFound();
+                    StartCoroutine(TreasureFound());
                 }
                 else
                 {
@@ -42,7 +42,7 @@ public class DigButton : MonoBehaviour
             case 2:
                 if (_treasureChance > 6)
                 {
-                    TreasureFound();
+                    StartCoroutine(TreasureFound());
                 }
                 else
                 {
@@ -53,7 +53,7 @@ public class DigButton : MonoBehaviour
             case 3:
                 if (_treasureChance > 4)
                 {
-                    TreasureFound();
+                    StartCoroutine(TreasureFound());
                 }
                 else
                 {
@@ -64,7 +64,7 @@ public class DigButton : MonoBehaviour
             case 4:
                 if (_treasureChance > 2)
                 {
-                    TreasureFound();
+                    StartCoroutine(TreasureFound());
                 }
                 else
                 {
@@ -85,13 +85,14 @@ public class DigButton : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    private void TreasureFound()
+    IEnumerator TreasureFound()
     {
         int chestSelector = Random.Range(0, 2);
         GameObject chest = Instantiate(chestPrefab[chestSelector], chestPosition.position, Quaternion.identity);
         chestFoundText.SetActive(true);
         _isTreasurefound = true;
-        Destroy(chest);
+        yield return new WaitForSeconds(2.0f);
         Instantiate(treasurePrefab, chestPosition.position, Quaternion.identity);
+        Destroy(chest, 0.5f);
     }
 }

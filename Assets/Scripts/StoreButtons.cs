@@ -61,7 +61,7 @@ public class StoreButtons : MonoBehaviour
         _greenBart._negotiationStarted = true;
         _inventoryTabs.SetActive(false);
         _commonButtons.SetActive(false);
-        Debug.Log(_treasure);
+        //Debug.Log(_treasure);
     }
 
     public void CancelTradeButton()

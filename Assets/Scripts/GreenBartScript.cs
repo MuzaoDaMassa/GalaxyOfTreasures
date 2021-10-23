@@ -77,10 +77,10 @@ public class GreenBartScript : MonoBehaviour
 
         else if (_negotiationRound <= 3)
         {
-            Debug.Log("Round smaller than 3");
+            //Debug.Log("Round smaller than 3");
             if (_counterOfferValue >= (_originalPrice * 2))
             {
-                Debug.Log("Counter Offer more or equal than double");
+                //Debug.Log("Counter Offer more or equal than double");
                 var _failChance = Random.Range(1, 10);
                 if (_failChance < 2)
                 {
@@ -115,7 +115,7 @@ public class GreenBartScript : MonoBehaviour
             }
             else
             {
-                Debug.Log("Counter Offer less than double");
+                //Debug.Log("Counter Offer less than double");
                 var _failChance = Random.Range(1, 10);
                 if (_failChance < 5)
                 {
@@ -152,10 +152,10 @@ public class GreenBartScript : MonoBehaviour
 
         else
         {
-            Debug.Log("Round bigger than 3");
+            //Debug.Log("Round bigger than 3");
             if (_counterOfferValue >= 2)
             {
-                Debug.Log("Counter Offer more or equal than double");
+                //Debug.Log("Counter Offer more or equal than double");
                 var _failChance = Random.Range(1, 10);
                 if (_failChance < 4)
                 {
@@ -189,7 +189,7 @@ public class GreenBartScript : MonoBehaviour
             }
             else
             {
-                Debug.Log("Counter Offer less than double");
+                //Debug.Log("Counter Offer less than double");
                 var _failChance = Random.Range(1, 10);
                 if (_failChance < 4)
                 {

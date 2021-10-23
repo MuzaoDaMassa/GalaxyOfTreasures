@@ -9,6 +9,8 @@ public class AgeGroupMenu : MonoBehaviour
 
     public void age_sixteen_twentyfour()
     {
+        PlayerPrefs.SetInt("TimesPlayed", +1);
+
         // Create dictionary to store you event data
         Dictionary<string, object> data = new Dictionary<string, object>();
         
@@ -23,10 +25,14 @@ public class AgeGroupMenu : MonoBehaviour
 
         this.gameObject.SetActive(false);
         menuObj.SetActive(true);
+
+        
     }
 
     public void age_twentyfive_thirtythree()
     {
+        PlayerPrefs.SetInt("TimesPlayed", +1);
+
         // Create dictionary to store you event data
         Dictionary<string, object> data = new Dictionary<string, object>();
 
@@ -45,6 +51,8 @@ public class AgeGroupMenu : MonoBehaviour
     }
     public void age_thirtyfour_fortytwoo()
     {
+        PlayerPrefs.SetInt("TimesPlayed", +1);
+
         // Create dictionary to store you event data
         Dictionary<string, object> data = new Dictionary<string, object>();
 
@@ -63,6 +71,8 @@ public class AgeGroupMenu : MonoBehaviour
     
     public void age_fortythree()
     {
+        PlayerPrefs.SetInt("TimesPlayed", +1);
+
         // Create dictionary to store you event data
         Dictionary<string, object> data = new Dictionary<string, object>();
 
@@ -77,6 +87,16 @@ public class AgeGroupMenu : MonoBehaviour
 
         this.gameObject.SetActive(false);
         menuObj.SetActive(true);
+    }
+
+    private void Awake()
+    {
+        Debug.Log(PlayerPrefs.HasKey("TimesPlayed"));
+        if (PlayerPrefs.HasKey("TimesPlayed"))
+        {
+            this.gameObject.SetActive(false);
+            menuObj.SetActive(true);
+        }
     }
 
 }
