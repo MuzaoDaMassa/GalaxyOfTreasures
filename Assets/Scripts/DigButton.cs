@@ -91,8 +91,9 @@ public class DigButton : MonoBehaviour
         GameObject chest = Instantiate(chestPrefab[chestSelector], chestPosition.position, Quaternion.identity);
         chestFoundText.SetActive(true);
         _isTreasurefound = true;
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(2.2f);
+        Destroy(chest);
         Instantiate(treasurePrefab, chestPosition.position, Quaternion.identity);
-        Destroy(chest, 0.5f);
+        
     }
 }
