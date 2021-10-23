@@ -21,6 +21,14 @@ public class DigButton : MonoBehaviour
         diggingAnchor = GameObject.Find("AR Session Origin").GetComponent<CreateDiggingAnchor>();
     }
 
+    private void Update()
+    {
+        if (_isTreasurefound)
+        {
+            treasurePrefab.SetActive(true);
+        }
+    }
+
 
     public void DigButtonPressed()
     {
@@ -90,12 +98,10 @@ public class DigButton : MonoBehaviour
     IEnumerator TreasureFound()
     {
         int chestSelector = Random.Range(0, 2);
-        GameObject chest = Instantiate(chestPrefab[chestSelector], chestPosition.position, Quaternion.identity);
+        Instantiate(chestPrefab[chestSelector], chestPosition.position, Quaternion.identity);
         chestFoundText.SetActive(true);
         _isTreasurefound = true;
         yield return new WaitForSeconds(2.0f);
-        Destroy(chest);
-        treasurePrefab.SetActive(true);
-        
+        Destroy(chestPrefab[chestSelector]);
     }
 }
