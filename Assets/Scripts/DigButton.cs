@@ -10,6 +10,7 @@ public class DigButton : MonoBehaviour
     public GameObject tryAgainText, chestFoundText;
     public GameObject[] chestPrefab;
     public GameObject treasurePrefab;
+    public GameObject leaveButton;
     [HideInInspector]
     public Transform chestPosition;
 
@@ -72,6 +73,7 @@ public class DigButton : MonoBehaviour
                 }
                 break;
             default:
+                leaveButton.SetActive(true);
                 break;
         }
     }
@@ -91,9 +93,9 @@ public class DigButton : MonoBehaviour
         GameObject chest = Instantiate(chestPrefab[chestSelector], chestPosition.position, Quaternion.identity);
         chestFoundText.SetActive(true);
         _isTreasurefound = true;
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(2.0f);
         Destroy(chest);
-        Instantiate(treasurePrefab, chestPosition.position, Quaternion.identity);
+        treasurePrefab.SetActive(true);
         
     }
 }
